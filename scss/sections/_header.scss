@@ -1,0 +1,108 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding-top: rem(12px);
+}
+.logo {
+    display: inline-block;
+    &__icon {
+        width: rem(92px);
+        height: rem(69px);
+    }
+}
+.nav {
+    margin-left: auto;
+    &__menu {
+        display: flex;
+        flex-wrap: wrap;
+        &-item {
+            padding: 0 rem(17px);
+            position: relative;
+            &::after {
+                content: '';
+                width: rem(4px);
+                height: rem(4px);
+                border-radius: 50%;
+                background-color: #fff;
+                position: absolute;
+                top: 50%;
+                right: rem(-2px);
+                transform: translateY(-50%);
+            }
+            &--last {
+                padding-right: rem(16px);
+                &::after {
+                    display: none;
+                    
+                }
+            }
+            @include tablets() {
+                display: none;
+            }
+        }
+        &-link {
+            @include u-medium;
+            font-size: rem(13px);
+            color: #fff;
+            text-transform: uppercase;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.order-button {
+    display: inline-block;
+    padding: rem(10px) rem(14px);
+    border-radius: rem(5px);
+    background-color: #e45028;
+    @include u-medium;
+    font-size: rem(13px);
+    color: #fff;
+    text-transform: uppercase;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+    &:hover {
+        background-color: #c1401e;
+    }
+    &--clear {
+        background-color: inherit;
+        margin-left: rem(6px);
+        &:hover {
+            background-color: inherit;
+        }
+    }
+}
+.hamburger-menu-button {
+    width: rem(24px);
+    height: rem(4px);
+    background-color: #fff;
+    border-radius: rem(2px);
+    margin-left: rem(30px);
+    position: relative;
+    cursor: pointer;
+    display: none;
+    @include tablets() {
+        display: block;
+    }
+    &:before {
+        content: '';
+        width: rem(24px);
+        height: rem(4px);
+        background-color: #fff;
+        border-radius: rem(2px);
+        position: absolute;
+        top: rem(-8px);
+        left: 0;
+    }
+    &:after {
+        content: '';
+        width: rem(24px);
+        height: rem(4px);
+        background-color: #fff;
+        border-radius: rem(2px);
+        position: absolute;
+        top: rem(8px);
+        left: 0;
+    }
+}

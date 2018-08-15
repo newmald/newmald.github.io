@@ -1,4 +1,4 @@
-@each $font in (gagalin-regular, ubuntu-bold, ubuntu-light, ubuntu-medium, lifehack-medium) {
+@each $font in (gagalin-regular, ubuntu, ubuntu-bold, ubuntu-light, ubuntu-medium, lifehack-medium) {
     @font-face {
         font-family: '#{$font}';
         src: url('../fonts/#{$font}.eot');

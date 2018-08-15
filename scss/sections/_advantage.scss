@@ -1,0 +1,55 @@
+.advantage {
+	background: url('../img/bg-advantage.jpg') center no-repeat;
+	background-size: cover;
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		margin: rem(38px) 0;
+		@include phones() {
+			flex-direction: column;
+		}
+	}
+	&__item {
+		flex: 1;
+		padding: 0 rem(10px);
+		text-align: center;
+		@include phones() {
+			display: flex;
+			text-align: left;
+			padding: 0;
+		}
+	}
+	&__img {
+		height: rem(116px);
+		@include phones() {
+			min-width: rem(140px);
+			text-align: center;
+		}
+	}
+	&__icon {
+		&-meat {
+			width: rem(96px);
+			height: rem(89px);
+		}
+		&-hand {
+			width: rem(73px);
+			height: rem(85px);
+		}
+		&-natural {
+			width: rem(88px);
+			height: rem(75px);
+		}
+	}
+	&__title {
+		@include life;
+		font-size: rem(24px);
+		line-height: rem(28px);
+		letter-spacing: -0.025em;
+		margin-bottom: rem(14px);
+	}
+	&__desc {
+		@include u-light;
+		font-size: rem(14px);
+		line-height: rem(24px);
+	}
+}

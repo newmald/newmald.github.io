@@ -1,0 +1,119 @@
+.team {
+	background: url('../img/bg-team.jpg') center no-repeat;
+	background-size: cover;
+	position: relative;
+	&__wrap {
+		width: 50%;
+		height: 100%;
+		background: rgba(47, 50, 52, 0.9);
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		@include tablets() {
+			width: 100%;
+			left: 0;
+		}
+	}
+	&__box {	
+		width: 80%;
+		height: 100%;
+		padding: 1% 7%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		@include tablets() {
+			width: 100%;
+			align-items: center;
+		}
+	}
+	&__list {
+		margin: rem(24px) 0;
+		padding-left: rem(26px);
+		@include tablets() {
+			padding-left: 0;
+			text-align: center;
+		}
+	}
+	&__item {
+		color: #fff;
+		padding-bottom: rem(10px);
+	}
+	&__title {
+		@include gagalin;
+		font-size: rem(14px);
+		line-height: rem(28px);
+		text-transform: uppercase;
+		cursor: pointer;
+		position: relative;
+		margin-bottom: rem(10px);
+		&:hover {
+			color: $yellow;
+		}
+		&:before {
+			content: '';
+			width: 0;
+			height: 0;
+			border-top: rem(6px) solid #f9b43b;
+			border-right: rem(4px) solid transparent;
+			border-bottom: rem(6px) solid transparent;
+			border-left: rem(4px) solid transparent;
+			position: absolute;
+			top: rem(10px);
+			left: rem(-20px);
+		}
+		&--active {
+			color: #f9b43b;
+			&.team__title--active:before {
+				transform: rotate(180deg);
+				top: rem(6px);
+			}
+			& + .team__hidden {
+				height: auto;
+				margin-bottom: rem(26px);
+			}
+		}
+		@include tablets() {
+			display: inline-block;
+			font-size: rem(24px);
+		}
+	}
+	&__hidden {
+		display: flex;
+		height: 0;
+		overflow: hidden;	
+		@include tablets() {
+			flex-direction: column;
+			align-items: center;
+		}	
+	}
+	&__photo {
+		width: rem(100px);
+		min-width: rem(100px);
+		height: rem(100px);
+		border-radius: 50%;
+		margin-right: rem(20px);
+		@include tablets() {
+			margin-right: 0;
+			margin-bottom: rem(14px);
+		}
+	}
+	&__desc {
+		max-width: rem(220px);
+		flex-direction: column;
+		font-size: rem(14px);
+		@include tablets() {
+			max-width: rem(340px);
+		}
+	}
+	&__profession {
+		@include u-bold;
+		line-height: rem(18px);
+		padding-bottom: rem(12px);
+	}
+	&__activity {
+		@include u-light;
+		line-height: rem(24px);
+	}
+}
+

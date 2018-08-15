@@ -1,0 +1,52 @@
+.home {
+	background: #000 url('../img/bg-home.jpg') center no-repeat;
+	background-size: cover;
+}
+.home-message {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-bottom: rem(70px);
+	@include tablets() {
+		justify-content: center;
+	}
+	&__burger {
+		padding-left: rem(16px);
+		width: 50%;
+		@include tablets() {
+			width: 100%;
+			text-align: center;
+			padding-left: 0;
+		}
+	}
+	&__title {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: rem(38px) 0 0 rem(14px);
+		@include tablets() {
+			width: rem(470px);
+			text-align: center;
+			padding: 0;
+		}
+	}
+}
+.subtitle--home-message {
+		display: block;
+		@include life;
+		font-size: rem(66px);
+		line-height: rem(60px);
+		color: #fff;
+		text-transform: none;
+		letter-spacing: -0.025em;
+		padding-top: rem(18px);
+	}
+.arrow-scroll {
+	align-self: center;
+	margin-bottom: rem(40px);
+	&__icon {
+		width: rem(28px);
+		height: rem(15px);
+	}
+}

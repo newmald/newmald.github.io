@@ -1,0 +1,90 @@
+.comments {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		height: 100%;
+		min-height: inherit;
+	}
+	&__item {
+		width: 25%;
+		height: 50%;
+		position: relative;
+		overflow: hidden;
+		filter: grayscale(100%);
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		&:hover .comments__hide{
+			opacity: 1;
+		}
+		@include tablets() {
+			width: 50%;
+			height: 25%;
+		}
+	}
+	&__hide {
+		width: 100%;
+		height: 100%;
+		background: rgba(20, 20, 20, 0.7);
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: rem(42px) rem(20px) rem(50px);
+		transition: 0.3s ease-out;
+		opacity: 0;
+		@include tablets() {
+			padding: 6%;
+			text-align: center;
+		}
+		@include phones() {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	&__title {
+		@include gagalin;
+		font-size: rem(14px);
+		line-height: rem(28px);
+		color: #fff;
+		text-transform: uppercase;	
+		@include phones() {
+			margin-bottom: 24px;
+		}
+	}
+	&__desc {
+		@include u-light;
+		font-size: rem(14px);
+		line-height: rem(24px);
+		color: #fff;
+		margin-bottom: rem(24px);
+		@include phones() {
+			display: none;
+		}
+	}
+	&__btn {
+		@include u-medium;
+		font-size: rem(13px);
+		line-height: rem(30px);
+		color: #fff;
+		text-transform: uppercase;
+		padding: rem(4px) rem(16px);
+		background-color: #2f3234;
+		border-radius: rem(5px);
+		cursor: pointer;
+		&:hover {
+			background-color: #1f2122;
+		}
+		@include phones() {
+			display: none;
+		}
+		&--phones {
+			display: none;
+			@include phones() {
+				display: block !important;
+			}
+		}
+
+	}
+}
